@@ -1,12 +1,9 @@
-import React from "react";
 import AgeCalculator from "./components/AgeCalculator";
-import Well from "./components/getDynamic";
 
 const App = () => {
   return (
-    <div>
+    <div className='min-h-screen w-full bg-[url("/bg-cover.jpg")]'>
       <AgeCalculator />
-      <Well />
     </div>
   );
 };

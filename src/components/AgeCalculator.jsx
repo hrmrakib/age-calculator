@@ -1,33 +1,20 @@
 import React, { useState, useEffect } from "react";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
-// const dates = Array.from({ length: 31 }, (_, i) => i + 1); // [1, 2, 3, ..., 30]
-
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-const years = Array.from({ length: 101 }, (_, i) => 2024 - i); // [2024, 2023, ..., 1924]
-
-const birthdate = "2024-9-1"; // YYYY-MM-DD
+import AgeStatus from "./AgeStatus";
+import AgeResult from "./AgeResult";
 
 function AgeCalculator() {
-  const [startDate, setStartDate] = useState(new Date());
+  const [day, setDay] = useState(0);
+  const [month, setMonth] = useState(0);
+  const [year, setYear] = useState(0);
   const [age, setAge] = useState({ years: 0, months: 0, days: 0 });
 
+  const birthdate = `${year}-${month}-${day}`; // YYYY-MM-DD
+
   useEffect(() => {
-    calculateAge();
-  }, []);
+    setTimeout(() => {
+      calculateAge();
+    }, 999);
+  }, [year, month, day]);
 
   const calculateAge = () => {
     const today = new Date();
@@ -50,13 +37,32 @@ function AgeCalculator() {
   };
 
   return (
-    <div>
-      <h2>Age Calculator</h2>
-      <div></div>
-      <p>
-        You are {age.years} years, {age.months} months, and {age.days} days old.
-      </p>
-    </div>
+    <>
+      <AgeResult years={age.years} months={age.months} days={age.days} />
+
+      <AgeStatus years={age.years} months={age.months} days={age.days} />
+
+      <form className='w-[70%] mx-auto flex flex-col gap-6'>
+        <input
+          type='number'
+          onChange={(e) => setDay(e.target.value)}
+          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          placeholder='Day'
+        />
+        <input
+          type='number'
+          onChange={(e) => setMonth(e.target.value)}
+          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          placeholder='Month'
+        />
+        <input
+          type='number'
+          onChange={(e) => setYear(e.target.value)}
+          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          placeholder='Year'
+        />
+      </form>
+    </>
   );
 }
 
