@@ -37,32 +37,32 @@ function AgeCalculator() {
   };
 
   return (
-    <>
+    <div className='flex flex-col justify-between'>
       <AgeResult years={age.years} months={age.months} days={age.days} />
 
       <AgeStatus years={age.years} months={age.months} days={age.days} />
 
-      <form className='w-[70%] mx-auto flex flex-col gap-6'>
+      <form className='w-[70%] mx-auto flex flex-col gap-5'>
         <input
           type='number'
           onChange={(e) => setDay(e.target.value)}
-          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-base rounded-lg  block w-full p-2.5'
           placeholder='Day'
         />
         <input
           type='number'
           onChange={(e) => setMonth(e.target.value)}
-          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-base rounded-lg  block w-full p-2.5'
           placeholder='Month'
         />
         <input
           type='number'
           onChange={(e) => setYear(e.target.value)}
-          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          className='shadow-sm bg-gray-50 outline-none border border-gray-300 text-gray-900 text-base rounded-lg  block w-full p-2.5'
           placeholder='Year'
         />
       </form>
-    </>
+    </div>
   );
 }
 

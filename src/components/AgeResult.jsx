@@ -1,7 +1,9 @@
 const AgeResult = ({ years, months, days }) => {
   return (
     <div>
-      <h2 className='text-center text-3xl text-white pt-2'>Age Calculator</h2>
+      <h2 className='text-center text-3xl text-white pt-2 border-b pb-1'>
+        Age Calculator
+      </h2>
       <p className='text-center text-white my-5'>
         <span className='text-2xl font-bold'>You are {years || 0} years,</span>{" "}
         <br />{" "}
