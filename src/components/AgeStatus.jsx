@@ -8,7 +8,7 @@ const AgeStatus = ({ years, months, days }) => {
             New Born Baby
           </p>
           <img
-            src='/new-born.png'
+            src='/new-born-baby.png'
             className='w-52 h-52 mx-auto rounded-2xl -mt-3 z-10'
             alt='New born baby'
           />
