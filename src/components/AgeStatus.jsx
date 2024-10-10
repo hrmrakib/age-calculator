@@ -1,6 +1,6 @@
 const AgeStatus = ({ years, months, days }) => {
   return (
-    <div className='my-5'>
+    <div className='my-5 w-52 h-52 mx-auto'>
       {/* New born baby */}
       {years === 0 && months <= 2 && (
         <div>
